@@ -1,0 +1,13 @@
+[Unit]
+Description=Logging service for tilt
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=300
+WorkingDirectory=/home/bjarte/workspace/tiltlog
+ExecStart=python -m poetry run python -m tiltlog
+
+[Install]
+WantedBy=multi-user.target
